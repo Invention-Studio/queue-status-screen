@@ -1,0 +1,152 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Arial';
+  font-size: 24pt;
+}
+
+body {
+  background-color: #E4E8EA;
+}
+
+.header-block {
+  height: 18%;
+  width: 100%;
+}
+
+.header-left, .header-right {
+  display: table;
+  float: left;
+  height: 100%;
+  width: 25%;
+  padding: 10pt 20pt;
+}
+
+.header-logo {
+  height: 100%;
+}
+
+.header-calendar {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 18pt;
+    text-align: right;
+}
+
+.header-center {
+  display: table;
+  float: left;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  font-size: 36pt;
+  font-weight: bolder;
+}
+
+.header-title {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.queue-body {
+  height: 75%;
+  width: 100%;
+}
+
+.queue-column {
+  float: left;
+  height: 100%;
+  width: 33.33%;
+  border-radius: 6pt;
+  font-size: 16pt;
+  overflow: hidden;
+}
+
+#column-3d-printers {
+  background-color: #D9C3C3;
+}
+
+#column-laser-cutters {
+  background-color: #C3D9C4;
+}
+
+#column-waterjet {
+  background-color: #C3C3D9;
+}
+
+.queue-column-header {
+  display: table;
+  height: 30pt;
+  width: 100%;
+  text-align: center;
+  font-size: 18pt;
+  font-weight: bold;
+  color: white;
+  border-radius: inherit;
+}
+
+.queue-column-header-title {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#header-3d-printers {
+  background-color: #B60000;
+}
+
+#header-laser-cutters {
+  background-color: #006A04;
+}
+
+#header-waterjet {
+  background-color: #1C1C82;
+}
+
+.queue-information-display {
+  width: 100%;
+  text-align: center;
+  padding: 5pt;
+}
+
+.queue > div {
+  padding-left: 15pt;
+}
+
+.queue-header-label {
+  border-top: 2px solid #6F6F6F;
+  border-bottom: 2px solid #6F6F6F;
+  margin-bottom: 10pt;
+}
+
+.queue-entry {
+  font-size: 14pt;
+}
+
+.queue-entry-ready {
+  color: #51FF1F;
+  font-size: 21pt;
+  padding-left: 4pt;
+  animation: blink 2s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  from {
+    color: #51FF1F;
+  }
+  to {
+    color: black;
+  }
+}
+
+.footer-block {
+  display: table;
+  height: 7%;
+  width: 100%;
+}
+
+.footer-text {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
