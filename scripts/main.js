@@ -14,27 +14,30 @@
   var queueLaserCutters = new Queue(SELECTOR_LASER_CUTTER_QUEUE);
   var queueWaterjet = new Queue(SELECTOR_WATERJET_QUEUE);
 
-  inventionStudioApi.getQueue(function(response) {
-    var entryArray = $.parseJSON(response);
+  updateAllQueues();
 
-    var entries3dPrinters = [];
-    var entriesLaserCutters = [];
-    var entriesWaterjet = [];
+  function updateAllQueues() {
+    inventionStudioApi.getQueue(function(response) {
+      var entryArray = $.parseJSON(response);
 
-    entryArray.forEach(function (entry) {
-      console.log(entry);
-      if (entry.queueName == "3D Printers") {
-        entries3queue3dPrinters.push(entry);
-      } else if (entry.queueName == "Laser Cutter") {
-        entriesLaserCutters.push(entry);
-      } else if (entry.queueName == "Waterjet") {
-        entriesWaterjet.push(entry);
-      }
+      var entries3dPrinters = [];
+      var entriesLaserCutters = [];
+      var entriesWaterjet = [];
+
+      entryArray.forEach(function (entry) {
+        if (entry.queueName == "3D Printers") {
+          entries3queue3dPrinters.push(entry);
+        } else if (entry.queueName == "Laser Cutter") {
+          entriesLaserCutters.push(entry);
+        } else if (entry.queueName == "Waterjet") {
+          entriesWaterjet.push(entry);
+        }
+      });
+
+      queue3dPrinters.updateQueue(entries3dPrinters);
+      queueWaterjet.updateQueue(entriesLaserCutters);
+      queueWaterjet.updateQueue(entriesWaterjet);
     });
-
-    queue3dPrinters.updateQueue(entries3dPrinters);
-    queueWaterjet.updateQueue(entriesLaserCutters);
-    queueWaterjet.updateQueue(entriesWaterjet);
-  });
+  }
 
 }) (window);
