@@ -48,7 +48,7 @@
       });
 
       queue3dPrinters.updateQueue(entries3dPrinters);
-      queueWaterjet.updateQueue(entriesLaserCutters);
+      queueLaserCutters.updateQueue(entriesLaserCutters);
       queueWaterjet.updateQueue(entriesWaterjet);
     });
   }
