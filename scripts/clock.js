@@ -35,7 +35,7 @@
   };
 
   Clock.prototype.update = function() {
-    console.log("update clock");
+    this.$weekdayElement.innerHTML = new Date().toLocaleString('en-us', {  weekday: 'long' })
   }
 
   App.Clock = Clock;
