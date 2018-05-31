@@ -14,7 +14,9 @@
   var queueLaserCutters = new Queue(SELECTOR_LASER_CUTTER_QUEUE);
   var queueWaterjet = new Queue(SELECTOR_WATERJET_QUEUE);
 
-  updateAllQueues();
+  window.setInterval(function() {
+    updateAllQueues();
+  }, 15000);
 
   function updateAllQueues() {
     inventionStudioApi.getQueue(function(response) {
