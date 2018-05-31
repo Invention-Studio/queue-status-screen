@@ -15,7 +15,7 @@
   var queueWaterjet = new Queue(SELECTOR_WATERJET_QUEUE);
 
   inventionStudioApi.getQueue(function(response) {
-    var entryArray = Object.values(response);
+    var entryArray = $.parseJSON(response);
     console.log(entryArray);
 
     var entries3dPrinters = [];
