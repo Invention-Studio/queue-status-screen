@@ -35,8 +35,10 @@
   };
 
   Clock.prototype.update = function() {
-    this.$weekdayElement.text(new Date().toLocaleString('en-us', {  weekday: 'long' }));
-    console.log(new Date().toLocaleString('en-us', {  weekday: 'long' }));
+    var date = new Date();
+    this.$weekdayElement.text(date.toLocaleString('en-us', {  weekday: 'long' }));
+    this.$dateElement.text(date.toLocaleString('en-us', { month: 'long', day: 'numeric', year: 'numeric'}));
+    this.$timeElement.text(date.toLocaleTimeString('en-us', { hour: 'numeric', minute: 'numeric'}));
   }
 
   App.Clock = Clock;
