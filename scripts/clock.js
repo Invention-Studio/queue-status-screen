@@ -35,7 +35,7 @@
   };
 
   Clock.prototype.update = function() {
-    //this.$weekdayElement.innerHTML = 
+    this.$weekdayElement.text(new Date().toLocaleString('en-us', {  weekday: 'long' }));
     console.log(new Date().toLocaleString('en-us', {  weekday: 'long' }));
   }
 
