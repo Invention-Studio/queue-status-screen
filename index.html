@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Invention Studio Queue</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
@@ -27,17 +28,11 @@
           <span class="queue-column-header-title">3D Printers</span>
         </div>
         <div class="queue-information-display" id="information-3d-printers">
-          <span class="queue-information-display-line">1 Available</span>
+          <span class="queue-information-display-line" id="availability-3d-printers">Unknown</span>
         </div>
         <div class="queue" id="queue-3d-printers">
           <div class="queue-header-label">
             <span>Queue</span>
-          </div>
-          <div class="queue-entry">
-            1. George Burdell
-          </div>
-          <div class="queue-entry">
-            2. Johnny Appleseed
           </div>
         </div>
       </div>
@@ -46,7 +41,7 @@
           <span class="queue-column-header-title">Laser Cutters</span>
         </div>
         <div class="queue-information-display" id="information-laser-cutters">
-          <span class="queue-information-display-line">1 Available</span>
+          <span class="queue-information-display-line" id="availability-laser-cutters">Unknown</span>
         </div>
         <div class="queue" id="queue-laser-cutters">
           <div class="queue-header-label">
@@ -59,7 +54,7 @@
           <span class="queue-column-header-title">Waterjet</span>
         </div>
         <div class="queue-information-display" id="information-waterjet">
-          <span class="queue-information-display-line">1 Available</span>
+          <span class="queue-information-display-line" id="availability-waterjet">Unknown</span>
         </div>
         <div class="queue" id="queue-waterjet">
           <div class="queue-header-label">
@@ -71,5 +66,11 @@
     <div class="footer-block">
       <span class="footer-text">Need to sign up? Tap your BuzzCard at the SUMS kiosk or ask the PI on duty</span>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+        charset="utf-8"></script>
+    <script src="scripts/queue.js" charset="utf-8"></script>
+    <script src="scripts/invention-studio-api.js" charset="utf-8"></script>
+    <script src="scripts/main.js" charset="utf-8"></script>
   </body>
 </html>
