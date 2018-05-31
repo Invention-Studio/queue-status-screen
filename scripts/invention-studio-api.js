@@ -14,7 +14,7 @@
     var requestUrl = URL + QUEUE_REQUEST_ENDPOINT;
     return $.get(requestUrl, function (serverResponse) {
       if (onComplete) {
-        cb(serverResponse);
+        onComplete(serverResponse);
       }
     });
   }
