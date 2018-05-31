@@ -16,13 +16,13 @@
 
   inventionStudioApi.getQueue(function(response) {
     var entryArray = $.parseJSON(response);
-    console.log(entryArray);
 
     var entries3dPrinters = [];
     var entriesLaserCutters = [];
     var entriesWaterjet = [];
 
     entryArray.forEach(function (entry) {
+      console.log(entry);
       if (entry.queueName == "3D Printers") {
         entries3queue3dPrinters.push(entry);
       } else if (entry.queueName == "Laser Cutter") {
