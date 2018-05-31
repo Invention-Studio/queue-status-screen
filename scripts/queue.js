@@ -16,6 +16,8 @@
   };
 
   Queue.prototype.updateQueue = function(queue) {
+    this.$element.find('.queue-entry').remove();
+    
     queue.sort(function (a, b) {
       return a.position - b.position;
     });
@@ -23,10 +25,6 @@
       var $newEntry = new Entry(entry).$element;
       this.$element.append($newEntry);
     }.bind(this));
-  };
-
-  Queue.prototype.clearEntries = function(status) {
-    this.$element.find('.queue-entry').remove();
   };
 
   function Entry(queueEntry) {
