@@ -14,9 +14,24 @@
   var queueLaserCutters = new Queue(SELECTOR_LASER_CUTTER_QUEUE);
   var queueWaterjet = new Queue(SELECTOR_WATERJET_QUEUE);
 
-  queue3dPrinters.updateQueue([{position: 1, userName: "Nick Rupert"}, {position: 2, userName: "George Burdell"}]);
   inventionStudioApi.getQueue(function(response) {
-    console.log(response);
+    var entries3dPrinters = [];
+    var entriesLaserCutters = [];
+    var entriesWaterjet = [];
+
+    response.forEach(function (entry) {
+      if (entry.queueName == "3D Printers") {
+        entries3queue3dPrinters.push(entry);
+      } else if (entry.queueName == "Laser Cutter") {
+        entriesLaserCutters.push(entry);
+      } else if (entry.queueName == "Waterjet") {
+        entriesWaterjet.push(entry);
+      }
+    });
+
+    queue3dPrinters.updateQueue(entries3dPrinters);
+    queueWaterjet.updateQueue(entriesLaserCutters);
+    queueWaterjet.updateQueue(entriesWaterjet);
   });
 
 }) (window);
