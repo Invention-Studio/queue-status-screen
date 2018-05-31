@@ -1,18 +1,29 @@
 (function (window) {
   'use strict';
 
+  var SELECTOR_CLOCK_WEEKDAY = '#clock-weekday';
+  var SELECTOR_CLOCK_DATE = '#clock-date';
+  var SELECTOR_CLOCK_TIME = '#clock-time';
   var SELECTOR_3D_PRINTER_QUEUE = '#queue-3d-printers';
   var SELECTOR_LASER_CUTTER_QUEUE = '#queue-laser-cutters';
   var SELECTOR_WATERJET_QUEUE = '#queue-waterjet';
 
   var App = window.App;
+  var Clock = App.Clock;
   var Queue = App.Queue;
   var InventionStudioApi = App.InventionStudioApi;
 
+  var clock = new Clock(SELECTOR_CLOCK_WEEKDAY, SELECTOR_CLOCK_DATE, SELECTOR_CLOCK_TIME);
   var inventionStudioApi = new InventionStudioApi();
   var queue3dPrinters = new Queue(SELECTOR_3D_PRINTER_QUEUE);
   var queueLaserCutters = new Queue(SELECTOR_LASER_CUTTER_QUEUE);
   var queueWaterjet = new Queue(SELECTOR_WATERJET_QUEUE);
+
+  updateAllQueues();
+
+  window.setInterval(function() {
+    clock.update();
+  }, 1000);
 
   window.setInterval(function() {
     updateAllQueues();
