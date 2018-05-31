@@ -17,14 +17,22 @@
 
   Queue.prototype.updateQueue = function(queue) {
     this.$element.find('.queue-entry').remove();
-    
-    queue.sort(function (a, b) {
-      return a.position - b.position;
-    });
-    queue.forEach(function(entry) {
-      var $newEntry = new Entry(entry).$element;
-      this.$element.append($newEntry);
-    }.bind(this));
+
+    if (queue.length > 0) {
+      queue.sort(function (a, b) {
+        return a.position - b.position;
+      });
+      queue.forEach(function(entry) {
+        var $newEntry = new Entry(entry).$element;
+        this.$element.append($newEntry);
+      }.bind(this));
+    } else {
+      var $div = $('<div></div>', {
+        'class': 'queue-entry'
+      });
+      $div.append("No Queue");
+      this.$element.append($div);
+    }
   };
 
   function Entry(queueEntry) {
