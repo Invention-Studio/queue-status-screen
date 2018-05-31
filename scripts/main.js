@@ -15,11 +15,13 @@
   var queueWaterjet = new Queue(SELECTOR_WATERJET_QUEUE);
 
   inventionStudioApi.getQueue(function(response) {
+    var entryArray = Object.keys(response);
+
     var entries3dPrinters = [];
     var entriesLaserCutters = [];
     var entriesWaterjet = [];
 
-    response.forEach(function (entry) {
+    entryArray.forEach(function (entry) {
       if (entry.queueName == "3D Printers") {
         entries3queue3dPrinters.push(entry);
       } else if (entry.queueName == "Laser Cutter") {
